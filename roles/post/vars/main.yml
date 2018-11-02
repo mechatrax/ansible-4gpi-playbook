@@ -1,0 +1,24 @@
+---
+post_purge_packages:
+  - gcc-4.6-base
+  - gcc-4.7-base
+  - gcc-4.8-base
+  - gcc-4.9-base
+  - gcc-5-base
+  - libboost-iostreams1.58.0
+  - libboost-iostreams1.60.0
+  - libudev0
+  - libsigc++-1.2-5c2
+
+post_install_packages:
+  - 4gpi-utils
+  - 4gpi-net-mods
+  - 4gpi-networkmanager
+  - jo
+  - jq
+  - modemmanager
+  - network-manager
+  - ntpdate
+  - rng-tools
+  - soracom-cli
+  - ufw

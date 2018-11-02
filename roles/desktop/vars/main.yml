@@ -1,0 +1,62 @@
+---
+desktop_install_packages:
+  - mechatrax-artwork
+  - firefox-esr
+
+desktop_purge_packages:
+  - rpd-wallpaper
+  - pixel-wallpaper
+  - rpi-chromium-mods
+  - chromium-browser
+  - java-common
+  - oracle-java8-jdk
+  - realvnc-vnc-server
+  - realvnc-vnc-viewer
+  - wolfram-engine
+  - bluej
+  - greenfoot
+  - geany
+  - idle
+  - idle3
+  - libreoffice-*
+  - minecraft-pi
+  - nuscratch
+  - python-pygame
+  - python3-pygame
+  - python-picraft
+  - python3-picraft
+  - python-sense-emu
+  - python-sense-emu-doc
+  - python3-sense-emu
+  - python3-thonny
+  - scratch
+  - scratch2
+  - sonic-pi
+  - supercollider-server
+  - dillo
+  - epiphany-browser
+  - epiphany-browser-data
+  - netsurf-common
+  - netsurf-gtk
+  - libgles1-mesa
+
+desktop_delete_home_dirs:
+  - .Xauthority
+  - .cache
+  - .config
+  - .gstreamer-0.10
+  - .local
+  - .themes
+  - .xsession-errors
+  - .xsession-errors.old
+  - Desktop
+  - Documents
+  - Downloads
+  - Music
+  - Pictures
+  - Public
+  - Templates
+  - Videos
+  - oldconffiles
+  - python_games
+  - MagPi
