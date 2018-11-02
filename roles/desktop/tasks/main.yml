@@ -1,0 +1,37 @@
+---
+- name: install desktop distribution packages
+  apt: name={{ item }} state=latest
+  with_items:
+    - "{{ desktop_install_packages }}"
+
+- name: purge packages
+  apt: name={{ item }} purge=yes state=absent
+  with_items:
+    - "{{ desktop_purge_packages }}"
+
+- name: delete directories under /home
+  file: path=/home/pi/{{ item }} state=absent
+  with_items:
+    - "{{ desktop_delete_home_dirs }}"
+
+- name: configure pi-greeter.conf
+  lineinfile: dest=/etc/lightdm/pi-greeter.conf
+              regexp={{ item.regexp }}
+              insertafter={{ item.insertafter }}
+              line={{ item.line }}
+              backup=yes
+  with_items:
+  - { regexp: '^desktop_bg=', line: 'desktop_bg=#f7f7f7f7f7f7', insertafter: '\[greeter\]' }
+  - { regexp: '^wallpaper=', line: 'wallpaper=/usr/share/mechatrax-artwork/4gpi-wallpaper.png', insertafter: '\[greeter\]' }
+
+- name: configure desktop-items-0.conf
+  lineinfile: dest=/etc/xdg/pcmanfm/LXDE-pi/desktop-items-0.conf
+              regexp={{ item.regexp }}
+              insertafter={{ item.insertafter }}
+              line={{ item.line }}
+              backup=yes
+  with_items:
+  - { regexp: '^desktop_bg=', line: 'desktop_bg=#f7f7f7f7f7f7', insertafter: '\[\*\]' }
+  - { regexp: '^desktop_fg=', line: 'desktop_fg=#171717171717', insertafter: '\[\*\]' }
+  - { regexp: '^wallpaper=', line: 'wallpaper=/usr/share/mechatrax-artwork/4gpi-wallpaper.png', insertafter: '\[\*\]' }
+

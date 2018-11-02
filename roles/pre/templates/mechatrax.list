@@ -1,0 +1,5 @@
+deb {{mechatrax_archive_url}} {{mechatrax_release}} main contrib non-free
+deb {{mechatrax_archive_url}} {{mechatrax_release}}-backports main contrib non-free
+# Uncomment line below then 'apt-get update' to enable 'apt-get source'
+#deb-src {{mechatrax_archive_url}} {{mechatrax_release}} main contrib non-free
+#deb-src {{mechatrax_archive_url}} {{mechatrax_release}}-backports main contrib non-free
